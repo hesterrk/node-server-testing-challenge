@@ -1,0 +1,5 @@
+1) Set up migration table using env commands X
+2) Set up one seed file with names of users using env commands X
+3) db config file set up for enviro variables X
+4) test all user routes X
+5) test server file X
