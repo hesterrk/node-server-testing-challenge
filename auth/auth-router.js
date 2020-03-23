@@ -2,7 +2,7 @@ const router = require("express").Router();
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const Users = require("../users/users-model.js");
-const restrict = require("../middleware/restricted-middleware");
+const restrict = require("../middleware/resticted-middleware");
 const validateUserInputs = require("../middleware/validateUserInputs")
 
 
@@ -27,7 +27,7 @@ router.post("/register", validateUserInputs(), async (req, res, next) => {
 
     const newUser = await Users.add(req.body)
     if(newUser) {
-      console.log(newUser)
+      // console.log(newUser)
     const payload = {
       userId: newUser.id,
       

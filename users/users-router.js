@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const restrict = require("../middleware/restricted-middleware");
+const restrict = require("../middleware/resticted-middleware");
 const Users = require("./users-model.js");
 
 
@@ -10,8 +10,6 @@ router.get("/", restrict(), async (req, res) => {
     next(error);
   }
 });
-
-
 
 router.get("/:id", async (req, res, next) => {
   try {
@@ -43,14 +41,6 @@ router.delete("/:id", async (req, res, next) => {
 
 
 
-router.post("/", async (req, res, next) => {
-    try {
-        const user = await Users.add(req.body)
-        res.status(201).json(user)
-      } catch (error) {
-      next(error);
-    }
-  });
 
 
 
